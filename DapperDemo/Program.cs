@@ -30,3 +30,17 @@ using System.IO;
     {
         Console.WriteLine(dept.Name);
     }
+var repoproducts = new DapperProductRepository(conn);
+
+Console.WriteLine("Type a new Product Name");
+
+var products = Console.ReadLine();
+
+repoproducts.CreateProduct(product);
+
+var product = repoproducts.GetAll();
+
+foreach (var Product in products)
+{
+    Console.WriteLine(product);
+}

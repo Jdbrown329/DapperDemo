@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DapperDemo
 {
-    public class DapperDepartmentRepository : IDepartmentRepositroy
+    public class DapperDepartmentRepository : IDepartmentRepository
     {
         private readonly IDbConnection _connection;
         //Constructor
@@ -18,7 +18,8 @@ namespace DapperDemo
         }
         public IEnumerable<Department> GetAllDepartments()
         {
-            return _connection.Query<Department>("SELECT * FROM Departments;").ToList();
+            
+         return _connection.Query<Department>("SELECT * FROM Departments;").ToList();        
         }
         public void InsertDepartment(string newDepartmentName)
         {
